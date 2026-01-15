@@ -6,6 +6,7 @@
     <meta name       = "viewport" content        = "width=device-width, initial-scale=1.0">
     <title>Responsive Portfolio Website Design</title>
     <link rel = "stylesheet" href = "style.css">
+    <link rel = "stylesheet" href = "mediaqueries.css">
     <!----Font awesome cdn  font icon css -->
     <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
@@ -18,11 +19,6 @@
                 <div class = "logo-text">Oluwatobi Sojimi</div>
                 </div>
                 <nav>
-                    <div class = "togglebtn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
                      <ul class = "nav-links">
                          
           <li><a href = "#about">About</a></li>
@@ -31,25 +27,17 @@
           <li><a href = "#contact">Contact</a></li>
          
         </ul>
-
-
-        
-        <nav id = "hamburger-nav">
-  
-      <div class = "hamburger-menu">
-      <div class = "hamburger-icon" onclick = "toggleMenu()">
+        <div class = "hamburger-icon" onclick = "toggleMenu()">
           <span></span>
           <span></span>
           <span></span>
         </div>
-        <div   class = "menu-links">
+        <ul class   = "menu-links">
         <li><a href  = "#about" onclick      = "toggleMenu()">About</a></li>
         <li><a href  = "#experience" onclick = "toggleMenu()">Experience</a></li>
         <li><a href  = "#projects" onclick   = "toggleMenu()">Projects</a></li>
         <li><a href  = "#contact" onclick    = "toggleMenu()">Contact</a></li>
-        </div>`
-      </div>
-    </nav>
+        </ul>
                 </nav>
             </header>
             <div class = "container">
@@ -69,9 +57,9 @@
                     </div>
 
                     <div class = "social">
-                    <a   href  = "https://facebook.com"><i class                  = "fa-brands fa-facebook"></i></a>
-                    <a   href  = "https://linkedin.com/in/sojimi-oluwatobi-8aa78a174"><i class                  = "fa-brands fa-linkedin"></i></a>
-                    <a   href  = "https://github.com"><i class = "fa-brands fa-github"></i></a>
+                    <a   href  = "https://facebook.com" title="Facebook"><i class                  = "fa-brands fa-facebook"></i></a>
+                    <a   href  = "https://linkedin.com/in/sojimi-oluwatobi-8aa78a174" title="LinkedIn"><i class                  = "fa-brands fa-linkedin"></i></a>
+                    <a   href  = "https://github.com" title="GitHub"><i class = "fa-brands fa-github"></i></a>
                        
                          <!--<img
             src     = "./assets/github.png"
@@ -354,8 +342,7 @@
         onclick = "location.href='./#contact'"
       />
   <button
-               style=" text-align: center;"
-                class   = "btn btn-color-2 project-btn"
+                class   = "btn btn-color-2 project-btn view-more-btn"
                 onclick = "location.href='//github.com/Sojimi1'"
               >
               View more
@@ -392,8 +379,7 @@
           <img
             src   = "./assets/phone.png"
             alt   = "phone icon"
-            style="border-radius: 50%;"
-            class = "icon contact-icon"
+            class = "icon contact-icon phone-icon"
           />
         </hr>
      <p>
@@ -402,8 +388,7 @@
   <img
             src   = "./assets/phone.png"
             alt   = "phone icon"
-            style="border-radius: 50%;"
-            class = "icon contact-icon"
+            class = "icon contact-icon phone-icon"
           />
         </hr>
    <p>
@@ -433,17 +418,8 @@
 
      <!---typed js for typing text effect-->
      <script src = "https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+     <script src = "script.js"></script>
      <script>
-            /** creating button click show hide navbar **/
-        var togglebtn = document.querySelector(".togglebtn");
-        var nav       = document.querySelector(".navlinks");
-        var links     = document.querySelector(".navlinks li");
-
-        togglebtn.addEventListener("click", function(){
-            this.classList.toggle("click");
-            nav.classList.toggle("open");
-        })
-
         var typed=new Typed(".input",{
             strings   : ["Frontend Developer","IT Consultant","Web Developer"],
             typedSpeed: 70,
